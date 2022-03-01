@@ -12,7 +12,31 @@
 
 ## 模板 gjm-homework
 
-用于完成课程小作业，效果见[gjm-homework.pdf](gjm-homework/gjm-homework.pdf)
+用于完成课程小作业，最详细的效果见[gjm-homework.pdf](gjm-homework/gjm-homework.pdf)。下面是一些图片预览
+
+* 标题与学生信息
+
+<img src="./img/gjm-hw-1.jpg" style="zoom:67%;" />
+
+* 问题列表
+
+<img src="./img/gjm-hw-3.jpg" style="zoom:67%;" />
+
+* 单列问题列表
+
+<img src="./img/gjm-hw-4.jpg" style="zoom:67%;" />
+
+* 代码渲染
+
+<img src="./img/gjm-hw-5.jpg" style="zoom:67%;" />
+
+* 脚注
+
+  <img src="./img/gjm-hw-2.jpg" style="zoom:67%;" />
+
+* 图论相关（待完善）
+
+  <img src="./img/gjm-hw-6.jpg" style="zoom:80%;" />
 
 
 
@@ -34,3 +58,7 @@
 ## LICENSE
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
+
+
+
+关于署名，您编译出的PDF文档中可以不出现我的名字，但请保留代码文件中的仓库链接。

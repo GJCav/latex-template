@@ -6,7 +6,7 @@
 \typeout{Document Class `gjm_hw' v1.0 by Mingjia Gu (2022/02)}
 
 \LoadClass[a4paper, UTF8]{ctexart}
-
+% Github: https://github.com/GJCav/latex-template
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % packages & customization
 
