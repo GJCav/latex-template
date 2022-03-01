@@ -1,0 +1,27 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{showcode}
+              [2022/02/24 v1.0 Quick Render Code, by GJM]
+
+% 支持代码渲染
+\usepackage{xcolor}
+\usepackage{listings}
+
+\lstset{
+    backgroundcolor = \color{yellow!10},    % 背景色：淡黄
+    basicstyle = \small\ttfamily,           % 基本样式 + 小号字体
+    rulesepcolor= \color{gray},             % 代码块边框颜色
+    breaklines = true,                  % 代码过长则换行
+    numbers = left,                     % 行号在左侧显示
+    numberstyle = \small,               % 行号字体
+    keywordstyle = \color{blue},            % 关键字颜色
+    commentstyle =\color{orange},        % 注释颜色
+    stringstyle = \color{magenta},          % 字符串颜色
+    frame = ltrb,                  % 用（带影子效果）方框框住代码块
+    showspaces = false,                 % 不显示空格
+    columns = fixed                    % 字间距固定
+    %escapeinside={<@}{@>}              % 特殊自定分隔符：<@可以自己加颜色@>
+    %morekeywords = {as},                % 自加新的关键字（必须前后都是空格）
+    %deletendkeywords = {compile}        % 删除内定关键字；删除错误标记的关键字用deletekeywords删！
+}
+
+\newcommand\code[1]{\colorbox{gray!20}{#1}}
