@@ -37,8 +37,8 @@
 * 图论相关（待完善）
 
   <img src="./img/gjm-hw-6.jpg" style="zoom:80%;" />
-
-
+  
+* 伪代码，使用`algorithm`和`breakablealgorithm`环境。
 
 **特别感谢**：
 
@@ -46,6 +46,20 @@
 
 * ilatex, https://github.com/liblaf/ilatex
 * WYC-Template, https://github.com/singlet-Carbene/WYC-Template
+
+
+
+
+
+## 模板 gjm-report
+
+适用于实验报告的双列模板，具体效果见[gjm-report.pdf](./gjm-report/gjm-report.pdf)
+
+
+
+> 特别感谢
+>
+> 该模板大量参考了[清华大学近代物理实验报告模板](https://overleaf.tsinghua.edu.cn/read/znfyzmsnhzxj)
 
 
 

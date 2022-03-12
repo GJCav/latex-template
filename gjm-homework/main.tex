@@ -147,6 +147,21 @@
     
     更多例子可见https://texample.net/
     
+  \section{伪代码示意}
+    \begin{algorithm}[H]
+    \caption{Subproblem Optimize} \label{subpro-opt}
+    \begin{algorithmic}[1]
+    \If{$r-l \le 30$}
+        \State sort p.pointlist by a specific sort algorithm
+        \State calculate minimal distance brutely here
+        \State \Return minimal distance
+    \ElsIf{$l \ge r-1$}
+        \State \Return INF
+    \EndIf
+    \end{algorithmic}
+    \end{algorithm}
+    
+    引用代码使用 \refalg{subpro-opt}。如果要允许代码块换行，使用breakablealgorithm代替algorithm。
 
   \section{代码渲染}
   

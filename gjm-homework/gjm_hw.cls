@@ -6,11 +6,10 @@
 \typeout{Document Class `gjm_hw' v1.0 by Mingjia Gu (2022/02)}
 
 \LoadClass[a4paper, UTF8]{ctexart}
+
 % Github: https://github.com/GJCav/latex-template
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % packages & customization
-
-\usepackage[UTF8]{ctex} % 支持中文
 \usepackage{graphicx}   % 支持图片, graphics包较老，不使用
 \usepackage{subfigure}  % 支持多图片
 \usepackage{float}      % 图片位置设置
@@ -19,9 +18,9 @@
 % \begin{addmargin}[左侧]{右侧}  xxxx \end{addmargin}
 
 %%%%%% 标题左对齐
-\CTEXsetup[format={\Large\bfseries}]{section}
-\CTEXsetup[format={\large\bfseries}]{subsection}
-\CTEXsetup[format={\bfseries}]{subsubsection}
+\ctexset{section/format=\Large\bfseries}
+\ctexset{subsection/format=\large\bfseries}
+\ctexset{subsubsection/format=\bfseries}
 
 %%%%%% 设置纸张大小
 \usepackage{geometry}   
@@ -52,14 +51,14 @@
     \renewcommand\footrulewidth{.5pt}
 	\fancyfoot[C]{\thepage / \pageref{LastPage}}
 	\fancyfoot[L]{\raisebox{-3ex}{\includegraphics[width=0.3\textwidth]{./images/logo_thu_wy_name.pdf}}}
-    \fancyfoot[R]{\schoolId \\ \contactInfo{}}
+    \fancyfoot[R]{\@author,\quad \schoolId \\ \contactInfo{}}
 }
 \fancypagestyle{masterContent} % 主要页面的页眉页脚
 {
     \fancyhead{}
     \fancyhead[L]{\course}
 	\fancyhead[C]{\assignment}
-	\fancyhead[R]{\@date,\ \semaster}
+	\fancyhead[R]{\@author,\quad \@date,\ \semaster}
     \renewcommand\headrulewidth{.5pt}
     
 	\footstyle
@@ -77,13 +76,15 @@
 \renewcommand\maketitle{
     \thispagestyle{frontPageStyle}
     \begin{center}
+        \noindent\rule{\textwidth}{1pt}
         {\bfseries
         {\huge \course \\}
         } % 加粗结束
-        \vspace{0.5em} % 标题下只有 0.5 em 缩进
+        \vspace{1.5em} % 标题下只有 0.5 em 缩进
         {\large \assignment \hfill  \@date,\ \semaster \\}
         \vspace{1 em}
         {\large \@author, \schoolId \hfill \contactInfo \\}
+        \noindent\rule{\textwidth}{1pt}
         \vspace{2em}
     \end{center}
     \pagestyle{masterContent}
@@ -146,3 +147,46 @@
 \renewcommand{\textcircled}{\Circled}
 \newcommand{\circled}{\Circled}
 % 之后可以直接 \circled{xxx} 来绘制带圈的东西了
+
+%%%%% 目录可以跳转、生成PDF书签
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  colorlinks=true,
+  allcolors=black,
+  pdfstartview=Fit,
+  breaklinks=true
+}
+
+%%%%% 替换为好看的数学符号
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\emptyset}{\varnothing}
+
+
+%%%%% 代码块模块
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\newcommand{\refalg}[1]{\textit{Algorithm \ref{#1}}}
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+{
+    \begin{center}
+        \refstepcounter{algorithm}
+        \renewcommand{\caption}[1]
+        {
+            \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}
+            \parbox{\textwidth}
+            % Makes a unbreakable block and can also be done by `minipage`.
+            {
+                \hrule height.8pt depth0pt \kern2pt
+                {\raggedright\textbf{\fname@algorithm~\thealgorithm} ##1\par}
+                \kern2pt\hrule\kern2pt
+            }
+        }
+}
+{
+        \kern2pt\hrule\relax
+    \end{center}
+}
+\makeatother
